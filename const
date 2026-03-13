@@ -1,0 +1,23 @@
+# ===================================================
+# Clock (12 MHz)
+# ===================================================
+NET "clk" LOC = "P87" | IOSTANDARD = LVCMOS33;
+
+# ===================================================
+# UART
+# ===================================================
+NET "rx" LOC = "P22" | IOSTANDARD = LVCMOS33;
+NET "tx" LOC = "P21" | IOSTANDARD = LVCMOS33;
+
+# ===================================================
+# LEDs
+# ===================================================
+NET "led_attack" LOC = "P16" | IOSTANDARD = LVCMOS33;
+NET "led_normal" LOC = "P15" | IOSTANDARD = LVCMOS33;
+NET "led_rx"     LOC = "P12" | IOSTANDARD = LVCMOS33;
+
+# ===================================================
+# Timing Constraint
+# ===================================================
+NET "clk" TNM_NET = clk_grp;
+TIMESPEC "TS_clk" = PERIOD "clk_grp" 83.33 ns HIGH 50%;
